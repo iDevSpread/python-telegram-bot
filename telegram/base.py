@@ -27,7 +27,10 @@ from abc import ABCMeta
 
 
 class TelegramObject(object):
-    """Base class for most telegram objects."""
+    """
+    Base class for most telegram objects.
+    """
+
     __metaclass__ = ABCMeta
     _id_attrs = ()
 
@@ -41,12 +44,13 @@ class TelegramObject(object):
     def de_json(data, bot):
         """
         Args:
-            data (dict):
+            data (:obj:`dict`):
             bot (:class:`telegram.Bot`):
 
         Returns:
-            dict
+            obj:`dict`
         """
+
         if not data:
             return None
 
@@ -57,15 +61,17 @@ class TelegramObject(object):
     def to_json(self):
         """
         Returns:
-            str
+            :obj:`str`
         """
+
         return json.dumps(self.to_dict())
 
     def to_dict(self):
         """
         Returns:
-            dict
+            :obj:`dict`
         """
+
         data = dict()
 
         for key in iter(self.__dict__):

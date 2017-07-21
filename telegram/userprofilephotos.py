@@ -22,19 +22,19 @@ from telegram import PhotoSize, TelegramObject
 
 
 class UserProfilePhotos(TelegramObject):
-    """This object represents a Telegram UserProfilePhotos.
+    """
+    This object represents a Telegram UserProfilePhotos.
 
     This object represent a user's profile pictures.
 
     Attributes:
-        total_count (int): Total number of profile pictures the target user has.
-        photos ([[:class:`telegram.PhotoSize`]]): Requested profile pictures (in up to
-                                                  4 sizes each).
+        total_count (:obj:`int`): Total number of profile pictures.
+        photos (List[List[:class:`telegram.PhotoSize`]]): Requested profile pictures.
 
     Args:
-        total_count (int): Total number of profile pictures the target user has.
-        photos (list(list(:class:`telegram.PhotoSize`))): Requested profile pictures (in
-                                                          up to 4 sizes each).
+        total_count (:obj:`int`): Total number of profile pictures the target user has.
+        photos (List[List[:class:`telegram.PhotoSize`]]): Requested profile pictures (in up to 4
+            sizes each).
     """
 
     def __init__(self, total_count, photos, **kwargs):
@@ -46,12 +46,13 @@ class UserProfilePhotos(TelegramObject):
     def de_json(data, bot):
         """
         Args:
-            data (dict):
+            data (:obj:`dict`):
             bot (:class:`telegram.Bot`):
 
         Returns:
             :class:`telegram.UserProfilePhotos`:
         """
+
         if not data:
             return None
 
@@ -64,8 +65,9 @@ class UserProfilePhotos(TelegramObject):
     def to_dict(self):
         """
         Returns:
-            dict:
+            :obj:`dict`:
         """
+
         data = super(UserProfilePhotos, self).to_dict()
 
         data['photos'] = []

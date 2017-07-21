@@ -23,20 +23,20 @@ from telegram import TelegramObject
 
 class PhotoSize(TelegramObject):
     """
-    This object represents one size of a photo or a file / sticker thumbnail.
+    This object represents one size of a photo or a file/sticker thumbnail.
 
     Attributes:
-        file_id (str): Unique identifier for this file.
-        width (int): Photo width.
-        height (int): Photo height.
-        file_size (int): Optional. File size.
+        file_id (:obj:`str`): Unique identifier for this file.
+        width (:obj:`int`): Photo width.
+        height (:obj:`int`): Photo height.
+        file_size (:obj:`int`): Optional. File size.
 
     Args:
-        file_id (str): Unique identifier for this file.
-        width (int): Photo width.
-        height (int): Photo height.
-        file_size (Optional[int]): File size.
-        **kwargs: Arbitrary keyword arguments.
+        file_id (:obj:`str`): Unique identifier for this file.
+        width (:obj:`int`): Photo width.
+        height (:obj:`int`): Photo height.
+        file_size (:obj:`int`, optional): File size.
+        **kwargs (:obj:`dict`): Arbitrary keyword arguments.
     """
 
     def __init__(self, file_id, width, height, file_size=None, **kwargs):
@@ -53,7 +53,7 @@ class PhotoSize(TelegramObject):
     def de_json(data, bot):
         """
         Args:
-            data (dict):
+            data (:obj:`dict`):
             bot (:class:`telegram.Bot`):
 
         Returns:
@@ -69,11 +69,11 @@ class PhotoSize(TelegramObject):
     def de_list(data, bot):
         """
         Args:
-            data (list):
+            data (:obj:`list`):
             bot (:class:`telegram.Bot`):
 
         Returns:
-            list(:class:`telegram.PhotoSize`)
+            List[:class:`telegram.PhotoSize`]
         """
 
         if not data:

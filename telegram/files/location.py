@@ -26,13 +26,13 @@ class Location(TelegramObject):
     This object represents a point on the map.
 
     Attributes:
-        longitude (float): Longitude as defined by sender.
-        latitude (float): Latitude as defined by sender.
+        longitude (:obj:`float`): Longitude as defined by sender.
+        latitude (:obj:`float`): Latitude as defined by sender.
 
     Args:
-        longitude (float): Longitude as defined by sender.
-        latitude (float): Latitude as defined by sender.
-        **kwargs: Arbitrary keyword arguments.
+        longitude (:obj:`float`): Longitude as defined by sender.
+        latitude (:obj:`float`): Latitude as defined by sender.
+        **kwargs (:obj:`dict`): Arbitrary keyword arguments.
     """
 
     def __init__(self, longitude, latitude, **kwargs):
@@ -46,7 +46,7 @@ class Location(TelegramObject):
     def de_json(data, bot):
         """
         Args:
-            data (dict):
+            data (:obj:`dict`):
             bot (:class:`telegram.Bot`):
 
         Returns:

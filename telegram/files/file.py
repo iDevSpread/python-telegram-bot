@@ -34,16 +34,16 @@ class File(TelegramObject):
         Maximum file size to download is 20 MB
 
     Attributes:
-        file_id (str): Unique identifier for this file.
-        file_size (str): Optional. File size, if known.
-        file_path (str): Optional. File path. Use :attr:`download` to get the file.
+        file_id (:obj:`str`): Unique identifier for this file.
+        file_size (:obj:`str`): Optional. File size.
+        file_path (:obj:`str`): Optional. File path. Use :attr:`download` to get the file.
 
     Args:
-        file_id (str): Unique identifier for this file.
-        file_size (Optional[int]): Optional. File size, if known.
-        file_path (Optional[str]): File path. Use :attr:`download` to get the file.
-        bot (telegram.Bot): Bot to use with shortcut method.
-        **kwargs (dict): Arbitrary keyword arguments.
+        file_id (:obj:`str`): Unique identifier for this file.
+        file_size (:obj:`int`, optional): Optional. File size, if known.
+        file_path (:obj:`str`, optional): File path. Use :attr:`download` to get the file.
+        bot (:obj:`telegram.Bot`, optional): Bot to use with shortcut method.
+        **kwargs (:obj:`dict`): Arbitrary keyword arguments.
     """
 
     def __init__(self, file_id, bot=None, file_size=None, file_path=None, **kwargs):
@@ -62,7 +62,7 @@ class File(TelegramObject):
     def de_json(data, bot):
         """
         Args:
-            data (dict):
+            data (:obj:`dict`):
             bot (:class:`telegram.Bot`):
 
         Returns:
@@ -85,12 +85,12 @@ class File(TelegramObject):
             `custom_path` and `out` are mutually exclusive.
 
         Args:
-            custom_path (Optional[str]): Custom path.
-            out (Optional[object]): A file-like object. Must be opened in binary mode, if
-                    applicable.
-            timeout (Optional[int|float]): If this value is specified, use it as the read timeout
-                    from the server (instead of the one specified during creation of the connection
-                    pool).
+            custom_path (:obj:`str`, optional): Custom path.
+            out (:obj:`object`, optional): A file-like object. Must be opened in binary mode, if
+                applicable.
+            timeout (:obj:`int` | :obj:`float`, optional): If this value is specified, use it as
+                the read timeout from the server (instead of the one specified during creation of
+                the connection pool).
 
         Raises:
             ValueError: If both ``custom_path`` and ``out`` are passed.
